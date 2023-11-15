@@ -1,0 +1,146 @@
+main {
+  position: relative;
+  height: 100%;
+  background-image: url(./assets/images/pattern-bg.svg),
+    url(./assets/images/pattern-quotes.svg);
+  background-size: calc(100% - 3rem), 20%;
+  background-position: 1.5rem 1.5rem, 50% 50%;
+  background-repeat: no-repeat;
+
+  .slider {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+
+    &__testimonial {
+      color: #5b5a67;
+
+      &__image {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        img {
+          width: 90%;
+          box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      &__testimony {
+        margin: 1.5rem;
+        padding-block: 1.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+
+        hgroup {
+          h1 {
+            font-size: 1rem;
+            color: var(--dark-blue);
+          }
+
+          p {
+            font-size: 0.8rem;
+            color: var(--grayish-blue);
+          }
+        }
+      }
+    }
+
+    &.move {
+      transform: translate(-50%);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    .slider {
+      &__testimonial {
+        &__image {
+          margin: 3rem;
+          padding: 3rem;
+          img {
+            width: 80%;
+          }
+        }
+
+        &__testimony {
+          margin-block: 0rem;
+          margin-inline: 3rem;
+          padding-block: 0rem;
+          font-size: 2rem;
+
+          hgroup {
+            h1 {
+              font-size: 1.5rem;
+            }
+
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    margin-inline: 10vw;
+    background-size: 50%, 10%;
+    background-position: 100%, 10% 35%;
+
+    .slider {
+      gap: 10vw;
+      &__testimonial {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__image {
+          width: 50%;
+          margin: unset;
+          padding: unset;
+          img {
+            width: 80%;
+          }
+        }
+
+        &__testimony {
+          width: 50%;
+          margin-block: 0rem;
+          margin-inline: unset;
+          padding-block: 0rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: start;
+
+          &__p {
+            position: relative;
+            width: 130%;
+          }
+
+          hgroup {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            p {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      &.move {
+        transform: translate(calc(-50% - 10vw));
+      }
+    }
+  }
+}

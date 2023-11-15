@@ -1,0 +1,42 @@
+.arrow {
+  position: absolute;
+  background-color: white;
+  border-radius: 2rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    padding: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.arrow__button {
+      &--disabled {
+        opacity: 50%;
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .arrow {
+    top: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .arrow {
+    left: 60%;
+    transform: unset;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (min-aspect-ratio: 1) {
+    .arrow {
+      top: 75%;
+    }
+  }
+}

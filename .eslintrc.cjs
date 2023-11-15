@@ -1,0 +1,42 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+  ],
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  parser: "@typescript-eslint/parser",
+  plugins: [
+    "react",
+    "react-refresh"
+  ],
+  rules: {
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
+    eqeqeq: "error",
+    curly: "error",
+    "no-unused-vars": "warn",
+    semi: ["error", "always"],
+    quotes: ["error", "double"],
+    indent: ["error", 2],
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "prefer-const": "error",
+    "no-var": "error",
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unused-state": "warn",
+    "react/no-deprecated": "warn",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-key": "warn",
+    "react/jsx-no-undef": "error",
+    "react/prop-types": "warn",
+    "react/prefer-es6-class": "error",
+  },
+};
